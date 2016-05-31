@@ -1,19 +1,17 @@
 package cse360assign2;
 
 /**
- * Creates and maintains an integer array, where all integers
- * are kept in ascending order. Default size is 10, but if more
- * than 10 numbers are inserted, the array will grow, all while
- * keeping the array sorted.
+ * Creates and maintains an integer array, where all integers are kept in
+ * ascending order. Default size is 10, but if more than 10 numbers are
+ * inserted, the array will grow, all while keeping the array sorted.
  * 
- * @author Oliver Scheiwiller for CSE 360 Assign2
- * Pin: 44
+ * @author Oliver Scheiwiller for CSE 360 Assign2 Pin: 44
  *
  */
 public class OrderedIntList {
 	protected int[] array;
 	protected int counter;
-	private boolean debug;
+	private boolean debug = false;
 
 	/**
 	 * Default constructor initializes a new array of size ten
@@ -21,18 +19,19 @@ public class OrderedIntList {
 	OrderedIntList() {
 		array = new int[10];
 	}
-	
+
 	/**
-	 * Insert function adds the value argument to the array.
-	 * If the max array size (default ten) is reached, it will
-	 * grow the array. All inserted values will be inserted
-	 * at the correct spot to maintain the ascending sort.
+	 * Insert function adds the value argument to the array. If the max array
+	 * size (default ten) is reached, it will grow the array. All inserted
+	 * values will be inserted at the correct spot to maintain the ascending
+	 * sort.
 	 * 
-	 * @param value number to be inserted into the array
+	 * @param value
+	 *            number to be inserted into the array
 	 */
 	public void insert(int value) {
 		if (debug) {
-			System.out.println("int value at beginning of insert" + value);
+			System.out.println("int value at beginning of insert: " + value);
 		}
 		if (counter == array.length) {
 			grow();
@@ -61,13 +60,16 @@ public class OrderedIntList {
 	}
 
 	/**
-	 * If the array's max size is reached, the grow function
-	 * allows for the array to be made larger, while still
-	 * maintaining the values already stored in the array
+	 * If the array's max size is reached, the grow function allows for the
+	 * array to be made larger, while still maintaining the values already
+	 * stored in the array
 	 * 
 	 */
 	private void grow() {
 		int[] temp = new int[counter * 2];
+		if (debug) {
+			System.out.println("Growing to size: " + counter * 2);
+		}
 		for (int index = 0; index < counter; index++) {
 			temp[index] = array[index];
 		}
@@ -75,8 +77,7 @@ public class OrderedIntList {
 	}
 
 	/**
-	 * Prints all values in the sorted array, 5 per line
-	 * separated by a tab each
+	 * Prints all values in the sorted array, 5 per line separated by a tab each
 	 * 
 	 */
 	public void print() {
