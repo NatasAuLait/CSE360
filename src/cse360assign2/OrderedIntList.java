@@ -6,7 +6,7 @@ package cse360assign2;
  * than 10 numbers are inserted, the array will grow, all while
  * keeping the array sorted.
  * 
- * @author Oliver Scheiwiller for CSE 360 Assign1
+ * @author Oliver Scheiwiller for CSE 360 Assign2
  * Pin: 44
  *
  */
@@ -31,6 +31,9 @@ public class OrderedIntList {
 	 * @param value number to be inserted into the array
 	 */
 	public void insert(int value) {
+		if (debug) {
+			System.out.println("int value at beginning of insert" + value);
+		}
 		if (counter == array.length) {
 			grow();
 		}
