@@ -28,6 +28,9 @@ public class TestAnalytics {
 
 		System.out.println("----- END EVEN TESTING -----");
 
+		/**
+		 * Testing with an odd amount of elements in the array
+		 */
 		Analytics testOdd = new Analytics();
 
 		testOdd.insert(1);
@@ -46,6 +49,9 @@ public class TestAnalytics {
 
 		System.out.println("----- END ODD TESTING -----");
 		
+		/**
+		 * Testing with an empty array
+		 */
 		Analytics testEmpty = new Analytics();
 
 		System.out.println("----- BEGIN EMPTY TESTING -----");
